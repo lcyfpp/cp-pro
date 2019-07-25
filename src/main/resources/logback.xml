@@ -1,0 +1,46 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<configuration>
+    <property name="APP_NAME" value="cp-admin"/>
+    <property name="LOG_DIR" value="${user.home}/apps/logs"/>
+    <property name="LOG_FORMAT" value="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n"/>
+    <!-- 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_FORMAT}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 文件日志输出 -->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_DIR}/${APP_NAME}.log</File>
+        <encoder>
+            <pattern>${LOG_FORMAT}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_DIR}/${APP_NAME}-%d{yyyy-MM-dd}.log
+            </FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+    </appender>
+    <!-- 1. 输出SQL 到控制台和文件-->
+    <logger name="org.hibernate.SQL" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="file"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- 2. 输出SQL 的参数到控制台和文件-->
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" additivity="false" level="TRACE">
+        <level value="TRACE"/>
+        <appender-ref ref="file"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <!-- 日志级别 -->
+    <root>
+        <level value="info"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+</configuration>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.linkedaim.admin.system.mapper.ProjectMapper">
+
+    <resultMap id="BaseResultMap" type="com.linkedaim.admin.project.model.entity.Project">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+        <result column="invest_unit" jdbcType="VARCHAR" property="investUnit"/>
+        <result column="position" jdbcType="VARCHAR" property="position"/>
+        <result column="invest_money" jdbcType="VARCHAR" property="investMoney"/>
+        <result column="start_time" jdbcType="VARCHAR" property="startTime"/>
+        <result column="end_time" jdbcType="VARCHAR" property="endTime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_user_id" jdbcType="VARCHAR" property="createUserId"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="update_user_id" jdbcType="VARCHAR" property="updateUserId"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="com.linkedaim.admin.project.model.entity.Project">
+      insert into t_project(
+      id,project_name,invest_unit,position,invest_money,start_time,end_time,status,create_time,create_user_id,update_time,update_user_id
+      ) values (
+      #{id,jdbcType=VARCHAR},
+      #{projectName,jdbcType=VARCHAR},
+      #{investUnit,jdbcType=VARCHAR},
+      #{position,jdbcType=VARCHAR},
+      #{investMoney,jdbcType=VARCHAR},
+      #{startTime,jdbcType=VARCHAR},
+      #{endTime,jdbcType=VARCHAR},
+      #{status,jdbcType=INTEGER},
+      #{createTime,jdbcType=TIMESTAMP},
+      #{createUserId,jdbcType=VARCHAR},
+      #{updateTime,jdbcType=TIMESTAMP},
+      #{updateUserId,jdbcType=VARCHAR}
+      )
+    </insert>
+
+</mapper>
