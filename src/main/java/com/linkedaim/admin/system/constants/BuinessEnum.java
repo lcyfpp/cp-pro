@@ -17,6 +17,7 @@ public class BuinessEnum {
         private String code;
         private String desc;
 
+        //0000
         public String getCode() {
             return code;
         }
