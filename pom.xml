@@ -27,7 +27,7 @@
         <pagehelper.version>1.2.10</pagehelper.version>
         <mapper.version>1.2.3</mapper.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.7.0</shiro.version>
         <shiroredis.version>3.1.0</shiroredis.version>
         <jwt.version>3.3.0</jwt.version>
         <jedis.version>2.9.0</jedis.version>
