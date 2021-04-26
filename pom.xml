@@ -31,7 +31,7 @@
         <shiroredis.version>3.1.0</shiroredis.version>
         <jwt.version>3.3.0</jwt.version>
         <jedis.version>2.9.0</jedis.version>
-        <commonsio.version>2.6</commonsio.version>
+        <commonsio.version>2.7</commonsio.version>
         <commonslang3.version>3.8</commonslang3.version>
         <mysql.version>5.1.46</mysql.version>
         <sdkoss.version>2.8.3</sdkoss.version>
