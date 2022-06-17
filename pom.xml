@@ -26,7 +26,7 @@
         <druid.version>1.1.10</druid.version>
         <pagehelper.version>1.2.10</pagehelper.version>
         <mapper.version>1.2.3</mapper.version>
-        <fastjson.version>1.2.47</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <shiro.version>1.4.0</shiro.version>
         <shiroredis.version>3.1.0</shiroredis.version>
         <jwt.version>3.3.0</jwt.version>
